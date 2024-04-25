@@ -76,7 +76,7 @@ class Question {
 
  // question 2 part one
 
- class Question {
+ class Question2 {
     constructor(text,options,correctAnswer){
             this.text = text;
             this.options = options;
@@ -86,6 +86,15 @@ class Question {
         return userName === this.correctAnswer;
     }
  }
+
+ const ques = new Question2(
+    "What is the the biggest market in Kenya?", 
+ ["Gikomba","Narok","Kajiado","Adis Ababa"],
+   "Gikomba"
+);
+console.log(ques.checkAnswer("Gikomba"));
+console.log(ques.checkAnswer("Kajiado"));
+  
    // question 2 part two
    class quiz {
     constructor (){
@@ -100,6 +109,14 @@ class Question {
     nextQuestion(){
         this.currentQuestionIndex++;
     }
+    submitAnswer(userName){
+        const currentQuestion = this.questions[this.currentQuestionIndex];
+        if(currentQuestion.checkAnswer(userName)){
+            this.score++;
+        }
+    }
+    
    }
+
 
 
